@@ -1,3 +1,4 @@
+/* 그리디 알고리즘 1026 (S = A[0] × B[0] + ... + A[N-1] × B[N-1])
 #include <iostream>
 #include <algorithm>
 using namespace std;
@@ -21,7 +22,9 @@ int main() {
 	for (int i = 0; i < N; i++) {
 		S = S + A[i] * B[i];
 	}
-	
+
 	printf("%d\n", S);
 	return 0;
 }
+
+*/

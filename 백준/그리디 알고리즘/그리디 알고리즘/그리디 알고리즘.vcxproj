@@ -20,7 +20,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1026.cpp" />
-    <ClCompile Include="소스1.cpp" />
+    <ClCompile Include="1049.cpp" />
+    <ClCompile Include="1213.cpp" />
+    <ClCompile Include="1246.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

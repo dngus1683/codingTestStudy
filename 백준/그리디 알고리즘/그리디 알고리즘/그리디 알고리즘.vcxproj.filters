@@ -24,7 +24,13 @@
     <ClCompile Include="1246.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="1213.cpp">
+    <ClCompile Include="1213%28진행중%29.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="1343.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="1417.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

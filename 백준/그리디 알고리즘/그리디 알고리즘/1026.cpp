@@ -1,4 +1,4 @@
-/* 그리디 알고리즘 1026 (S = A[0] × B[0] + ... + A[N-1] × B[N-1])
+/* 그리디 알고리즘 1026 (S = A[0] × B[0] + ... + A[N-1] × B[N-1]) (실버4)
 #include <iostream>
 #include <algorithm>
 using namespace std;

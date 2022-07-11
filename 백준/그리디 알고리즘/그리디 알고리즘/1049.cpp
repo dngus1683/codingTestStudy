@@ -1,4 +1,4 @@
-/* 그리디 알고리즘 1049 기타줄 구매
+/* 그리디 알고리즘 1049 기타줄 구매 (실버4)
 #include <iostream>
 #include <algorithm>
 

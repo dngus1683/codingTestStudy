@@ -27,6 +27,7 @@
     <ClCompile Include="1343.cpp" />
     <ClCompile Include="1417.cpp" />
     <ClCompile Include="1439.cpp" />
+    <ClCompile Include="2847.cpp" />
     <ClCompile Include="3135.cpp" />
     <ClCompile Include="6550.cpp" />
   </ItemGroup>

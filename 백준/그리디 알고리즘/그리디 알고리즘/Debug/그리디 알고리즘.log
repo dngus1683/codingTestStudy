@@ -1,4 +1,7 @@
-﻿  12981.cpp
-  2847.cpp
+﻿  14916.cpp
+  15720.cpp
+D:\Atom\codingTestStuty\백준\그리디 알고리즘\그리디 알고리즘\15720.cpp(40,17): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Atom\codingTestStuty\백준\그리디 알고리즘\그리디 알고리즘\15720.cpp(41,17): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Atom\codingTestStuty\백준\그리디 알고리즘\그리디 알고리즘\15720.cpp(42,17): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   코드를 생성하고 있습니다...
   그리디 알고리즘.vcxproj -> D:\Atom\codingTestStuty\백준\그리디 알고리즘\Debug\그리디 알고리즘.exe

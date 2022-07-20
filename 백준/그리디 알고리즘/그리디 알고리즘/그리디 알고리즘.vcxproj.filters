@@ -60,7 +60,10 @@
     <ClCompile Include="4796.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="16208%28진행중%29.cpp">
+    <ClCompile Include="16208.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="16435.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

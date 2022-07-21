@@ -31,7 +31,9 @@
     <ClCompile Include="15720.cpp" />
     <ClCompile Include="16208.cpp" />
     <ClCompile Include="16435.cpp" />
+    <ClCompile Include="1817.cpp" />
     <ClCompile Include="2847.cpp" />
+    <ClCompile Include="2891.cpp" />
     <ClCompile Include="3135.cpp" />
     <ClCompile Include="4796.cpp" />
     <ClCompile Include="6550.cpp" />

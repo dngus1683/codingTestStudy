@@ -1,0 +1,1 @@
+간선이 많을 경우 prim (O(ElogV)), 간선이 적을 경우 cruscal (O(ElogE))   (E:edge, V: 간선)

@@ -211,27 +211,79 @@
 # print(True if index >= 0 and x[index] == value else False)
 
 
-# 이진 탐색
-import random
-from timeit import default_timer as timer
+# # 이진 탐색
+# import random
+# from timeit import default_timer as timer
+#
+# def binary_search(x,v):
+#     start = 0
+#     end = len(x) -1
+#     while start <= end:
+#         mid = (start+end) // 2
+#         if x[mid] == v: return mid
+#         elif x[mid] < v: start = mid + 1
+#         else: end = mid - 1
+#     return -1
+#
+# x = random.sample(range(5000), 1000)
+# x.sort()
+# value = x[800]
+#
+# start = timer()
+# index = binary_search(x, value)
+# print(timer() - start)
+#
+# print('value', value, 'found', index)
+# print(True if index >= 0 and x[index] == value else False)
 
-def binary_search(x,v):
-    start = 0
-    end = len(x) -1
-    while start <= end:
-        mid = (start+end) // 2
-        if x[mid] == v: return mid
-        elif x[mid] < v: start = mid + 1
-        else: end = mid - 1
-    return -1
 
-x = random.sample(range(5000), 1000)
-x.sort()
-value = x[800]
 
-start = timer()
-index = binary_search(x, value)
-print(timer() - start)
+#####                     04.12 (수)                    #####
+# 너비우선탐색(BFS) - 길 찾기
 
-print('value', value, 'found', index)
-print(True if index >= 0 and x[index] == value else False)
+import collections
+
+class Queue(object):
+    def __init__(self):
+        self.elements = collections.deque()
+    def length(self):
+        return len(self.elements)
+    def push(self, x):
+        self.elements.append(x)
+    def pop(self):
+        return self.elements.popleft()
+
+grid = [[0,0,0,0,0,0,0,0,0,0],
+        [0,1,1,1,1,1,1,1,1,0],
+        [0,1,0,0,0,0,1,0,1,0],
+        [0,1,1,1,1,0,1,0,1,0],
+        [0,0,1,0,1,0,1,1,1,0],
+        [0,1,1,0,1,1,1,0,1,0],
+        [0,0,0,0,0,0,0,0,0,0]]
+
+start = (1, 5)
+goal = (8, 1)
+
+queue = Queue()
+queue.push(start)
+came_from = {}
+
+while queue.length() > 0:
+    current = queue.pop()
+
+    if current == goal:
+        break
+    (x, y) = current
+    candidates = [(x+1,y), (x,y-1), (x-1,y), (x,y+1)]
+    for next in [(h,v) for h,v in candidates if grid[v][h] != 0]:
+        if next not in came_from:
+            queue.push(next)
+            came_from[next] = current
+
+currrent = goal
+path = []
+while currrent is not start:
+    path.append(currrent)
+    currrent = came_from[currrent]
+path.reverse()
+print(path)

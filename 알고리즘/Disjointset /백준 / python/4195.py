@@ -62,15 +62,15 @@ solution(T)
 
 # 답안 예시
 # Root node를 찾아주는 함수
-def find(x):
-    if x == parent[x]:
-        return x
-    else:
-        root_x = find(parent[x])
-        parent[x] = root_x
-        return parent[x]
-
-
+# def find(x):
+#     if x == parent[x]:
+#         return x
+#     else:
+#         root_x = find(parent[x])
+#         parent[x] = root_x
+#         return parent[x]
+#
+#
 # y의 Root 노드가 x의 Root 노드와 같지 않으면
 # y의 Root 노드가 x의 Root 노드의 자식이 되도록 하는 함수
 # def union(x, y):

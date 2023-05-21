@@ -48,8 +48,6 @@ print(''.join(LCS[1:d[-1][-1]+1]))
 
 
 
-
-
 # 답안 예시1
 # s1 = input()
 # s2 = input()

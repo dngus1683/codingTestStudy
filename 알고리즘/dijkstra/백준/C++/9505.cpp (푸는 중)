@@ -1,0 +1,113 @@
+// 엔터프라이즈호 탈출
+// 상하좌우로 이동가능한 좌표 내에서 엔터프라이즈 호가 클링온 호를 무력화 시키며 도착지점까지 가야 한다.
+// 각 클래스 별로 클링온 호를 무력화 시키는 데 필요한 수치가 주어질 때, 엔터프라이즈 호가 탈출하는 데 걸리는 최소 시간을 구하라.
+
+
+// 내 답안1
+#include <iostream>
+#include <queue>
+#include <vector>
+#include <algorithm>
+#include <map>
+
+#define INF 987654321
+#define MAX_T 101
+#define MAX_K 26
+#define MAX_W 1001
+#define MAX_H 1001
+
+using namespace std;
+
+vector<pair<int, int>> graph[MAX_H*MAX_W];
+map<char, int> class_k;
+char pl[MAX_H][MAX_W];
+int d[MAX_H*MAX_W];
+int dx[4] = {-1, 1, 0, 0};
+int dy[4] = {0, 0, -1, 1};
+int EndPoint = 0;
+
+void dijkstra(int start)
+{
+    priority_queue<pair<int, int>> pq;
+    pq.push({0, start});
+    
+    d[start] = 0;
+    while(!pq.empty())
+    {
+        int dist = -pq.top().first;
+        int now = pq.top().second;
+        pq.pop();
+        
+        if(d[now] < dist) continue;
+        for(int i=0; i<graph[now].size(); i++)
+        {
+            int cost = d[now] + graph[now][i].second;
+            if(cost < d[graph[now][i].first])
+            {
+                d[graph[now][i].first] = cost;
+                pq.push({-cost, graph[now][i].first});
+            }
+        }
+    }
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    
+    int T;
+    cin >> T;
+    for(int TestCase=0; TestCase < T; TestCase++)
+    {
+        int K, W, H;
+        cin >> K >> W >> H;
+        
+        fill(d, d+MAX_H*MAX_W, INF);
+        class_k.clear();
+        for(int i=0; i<MAX_H*MAX_W; i++)
+            graph[i].clear();
+        
+        for(int i=0; i<K; i++)
+        {
+            char cl;
+            int weight;
+            cin >> cl >> weight;
+            
+            class_k.insert({cl, weight});
+        }
+        
+        for(int i=0; i<H; i++)
+        {
+            cin >> pl[i];
+        }
+        
+        for(int i=0; i<H; i++)
+        {
+            for(int j=0; j<W; j++)
+            {
+                for(int k=0; k<4; k++)
+                {
+                    if(i+dy[k] < 0 || i+dy[k] >= W || j+dx[k] < 0 || j+dx[k] >= W ) continue;
+                    
+                    int IdxNow = i*W + j;
+                    int IdxNext = (i+dy[k])*W + j+dx[k];
+                    int ClassWeight = class_k.find(pl[i+dy[k]][j+dx[k]])->second;
+                    
+                    if(pl[i+dy[k]][j+dx[k]] == 'E')
+                    {
+                        ClassWeight = 0;
+                    }
+                    if(pl[i][j] == 'E') EndPoint = IdxNow;
+                    
+                    graph[IdxNow].push_back({IdxNext, ClassWeight});
+                }
+            }
+        }
+        
+        dijkstra(0);
+        
+        cout << d[EndPoint] << '\n';
+        
+    }
+}

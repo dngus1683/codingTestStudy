@@ -8,15 +8,26 @@
 #include <queue>
 #include <algorithm>
 #include <vector>
-#include <cstring>
 
 #define INF 987654321
 #define MAX_N 51
 
 using namespace std;
 
-vector<pair<int, int>> graph[MAX_N * MAX_N];
-vector<int> point;
+typedef struct node
+{
+    int i;
+    int j;
+    int dir;
+    int dist;
+}node;
+
+bool operator<(node t, node u)
+{
+    return t.dist > u.dist;
+}
+vector<node> graph[MAX_N * MAX_N];
+vector<node> SEpoint;
 char map[MAX_N][MAX_N];
 int dx[4] = {-1, -1, 1, 1};
 int dy[4] = {-1, 1, -1, 1};
@@ -24,25 +35,25 @@ int d[MAX_N];
 
 void dijkstra(int start)
 {
-    priority_queue<pair<int, int>> pq;
-    pq.push({0, start});
+    priority_queue<node> pq;
+    pq.push({start, 4, 0});
 
     d[start] = 0;
 
     while(!pq.empty())
     {
-        int dist = -pq.top().first;
-        int now = pq.top().second;
+        node now = pq.top();
         pq.pop();
 
-        if(d[now] < dist) continue;
-        for(int i=0; i<graph[now].size(); i++)
+        if(d[now.idx] < now.dist) continue;
+        for(int i=0; i<graph[now.idx].size(); i++)
         {
-            int cost = d[now] + graph[now][i].second;
-            if(cost < d[graph[now][i].first])
+            int cost = d[now.idx] + graph[now.idx][i].dist;
+            if(now.dir == graph[now.idx][i].dir && graph[now.idx][i].)
+            if(cost < d[graph[now.idx][i].idx])
             {
-                d[graph[now][i].first] = cost;
-                pq.push({-cost, graph[now][i].first});
+                d[graph[now.idx][i].idx] = cost;
+                pq.push({-cost, graph[now.idx][i].idx});
             }
         }
     }
@@ -58,27 +69,26 @@ int main()
 
     for(int i=0; i<N; i++)
     {
-        char a[MAX_N];
-        cin >> a;
-        strcat(map[i], a);
+        cin >> map[i];
 
         for(int j=0; j<N; j++)
         {
-            if(map[i][j] == '.' || map[i][j] == '*') continue;
+            if(map[i][j] == '#') SEpoint.push_back({i, j, 4, 0});
+            else if(map[i][j] == '*') continue;
             for(int k=0; k<4; k++)
             {
-                if(i+dx[k] < 0 || i+dx[k] >= N || j+dy[k] < 0 || j+dy[k] >= N) continue;
-                int IdxNow = i*N + j;
-                int IdxNext = (i+dx[k])*N + (j+dy[k]);
-                graph[IdxNow].push_back({IdxNext, 1});
+                if(i+dy[k] < 0 || i+dy[k] >= N || j+dx[k] < 0 || j+dx[k] >= N) continue;
 
-                if(map[i][j] == '#') point.push_back(IdxNext);
+                int dist = 1;
+                if(map[i][j] == '#' || map[i][j] == '.')  dist = 0;
+
+                graph[IdxNow].push_back({IdxNext, k, dist});
             }
         }
     }
 
     fill(d, d+MAX_N, INF);
-    dijkstra(point[0]);
+    dijkstra(SEpoint[0]);
 
-    cout << d[point[1]] << '\n';
+    cout << d[SEpoint[1]] << '\n';
 }

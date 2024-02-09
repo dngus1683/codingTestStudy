@@ -1,0 +1,92 @@
+// What's your ETA?
+// 1번부터 N번까지 버스를 타고 가야 한다. 역과 역 사이에는 양방향 도로가 존재하며 각 역은 5,000,000 이하의 정수 재난 코드를 가진다.
+// 출발 역과 도착 역의 재난 코드의 합이 소수일 경우에만 버스가 이동이 가능하다. 역 사이에 이동 시간이 주어질 때,
+// 최단 시간을 구하라.
+
+
+// 내 답안1
+#include <iostream>
+#include <queue>
+#include <algorithm>
+#include <vector>
+
+#define INF 987654321
+#define MAX_N 400001
+#define MAX_M 1000001
+#define MAX_D 5000001
+
+using namespace std;
+
+long long int Dn[MAX_N];
+bool IsPrime[MAX_D+MAX_D];
+vector<pair<int, int>> graph[MAX_N];
+long long int d[MAX_N];
+
+void dijkstra(int start)
+{
+    priority_queue<pair<int, int>> pq;
+    pq.push({0, start});
+
+    d[start] = 0;
+
+    while(!pq.empty())
+    {
+        int dist = -pq.top().first;
+        int now = pq.top().second;
+        pq.pop();
+
+        if(d[now] < dist) continue;
+        for(int i=0; i<graph[now].size(); i++)
+        {
+            long long int cost = d[now] + graph[now][i].second;
+            if(cost < d[graph[now][i].first] && IsPrime[Dn[now] + Dn[graph[now][i].first]])
+            {
+                d[graph[now][i].first] = cost;
+                pq.push({-cost, graph[now][i].first});
+            }
+        }
+    }
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+
+    int N, M;
+    cin >> N >> M;
+
+    for(int i=1; i<=N; i++)
+    {
+        cin >> Dn[i];
+    }
+    for(int i=0; i<M; i++)
+    {
+        int u, v, w;
+        cin >> u >> v >> w;
+
+        graph[u].push_back({v, w});
+        graph[v].push_back({u, w});
+    }
+
+    fill(d, d+MAX_N, INF);
+    fill(IsPrime, IsPrime+MAX_D+MAX_D, true);
+
+    for(int i=2; i<MAX_D+MAX_D; i++)
+    {
+        if(IsPrime[i])
+        {
+            for(int j=i+i; j<MAX_D+MAX_D; j += i)
+            {
+                IsPrime[j] = false;
+            }
+        }
+    }
+    IsPrime[1] = false;
+    IsPrime[0] = false;
+
+    dijkstra(1);
+
+    if(d[N] >= INF) cout << "Now where are you?" << '\n';
+    else cout << d[N] << '\n';
+}

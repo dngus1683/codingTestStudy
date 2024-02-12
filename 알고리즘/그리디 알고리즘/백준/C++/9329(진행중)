@@ -1,0 +1,119 @@
+// 패스트 푸드 상금
+// 각기 다른 패스트 푸드 스티커가 있다. 해당 스티커들을 상금으로 바꿀 수 있으며, 각 상금마다 필요한 스티커의 종류가 다르다. 상금으로 바꾸는데 드는 스티커 비용과 상금이 주어질 때, 상금 최댓값을 구하라.
+
+
+// 내 답안1
+#include <iostream>
+#include <vector>
+#include <cmath>
+
+#define INF 987654321
+#define MAX_N 11
+#define MAX_M 31
+
+using namespace std;
+
+vector<int> Money;
+vector<int> NeedSt[MAX_N];
+int d[MAX_M];
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+
+    int T;
+    cin >> T;
+    for(int TestCase=0; TestCase<T; TestCase++)
+    {
+        int n, m, k, ans = 0;
+
+        Money.clear();
+        for(int i=0; i<MAX_N; i++)
+            NeedSt[i].clear();
+        fill(d, d+MAX_N, 0);
+
+        cin >> n >> m;
+        for(int i=0; i<n; i++)
+        {
+            cin >> k;
+            for(int j=0; j<k; j++)
+            {
+                int nst;
+                cin >> nst;
+                NeedSt[i].push_back(nst);
+            }
+            int my;
+            cin >> my;
+            Money.push_back(my);
+        }
+        for(int i=1; i<=m; i++)
+            cin >> d[i];
+
+        for(int i=0; i<n; i++)
+        {
+            int mn = INF;
+            for(int j=0; j<NeedSt[i].size(); j++)
+            {
+                mn = min(mn, d[NeedSt[i][j]]);
+            }
+            ans += Money[i]*mn;
+        }
+        cout << ans << '\n';
+    }
+}
+
+
+// 내 답안2 오답
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int T, n, m, k, a, b, mfp[11], fp[31], cfp[31][10], pc[11], cnt[31],mul[11], ans;
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0); cout.tie(0);
+
+	cin >> T;
+	while (T--) {
+		a = 1;
+		ans = 0;
+
+		cin >> n >> m;
+		for (int i = 0; i < n; i++) {
+			cin >> k;
+			mfp[a] = 100;
+			for (int j = 0; j < k; j++) {
+				int c;
+				cin >> c;
+				cfp[c][i] = a;
+			}
+			cin >> pc[a];
+			a++;
+		}
+		for (int i = 1; i < m+1; i++) {
+			cin >> fp[i];
+			for (int j = 0; j < n; j++) {
+				mfp[cfp[i][j]] = min(mfp[cfp[i][j]], fp[i]);
+				if (cfp[i][j] != 0) cnt[i]++;
+			}
+		}
+		for (int i = 1; i < m + 1; i++) {
+			for (int j = 1; j < n+1; j++) {
+				mul[j] = mfp[j] * pc[j];
+				if (cnt[i] > 1) {
+					b > mfp[j] ? mfp[j] = 0 : b = mfp[j];
+				}
+			}
+		}
+		for (int i = 1; i < n+1; i++) {
+			ans = ans + mul[i];
+		}
+		cout << ans << '\n';
+		
+	}
+
+	return 0;
+}

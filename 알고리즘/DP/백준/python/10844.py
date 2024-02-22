@@ -12,18 +12,22 @@ input = sys.stdin.readline
 
 n = int(input())
 
-a = [[0 for _ in range(10)] for _ in range(n+1)]
-# a = [[0] * 10] * (n+1)    # []*10 은 []를 10개 복사해서 붙인 방식이라 얕은 복사가 일어난다. 때문에 [1][0]의 요소를 바꾸면 모든 [i][0]이 같이 바뀐다.
+a = [[0] * 10] * (n+1)
 
 a[1] = [0,1,1,1,1,1,1,1,1,1]
 
 for i in range(2, n+1):
+    li = a[i-1][:]
     a[i][0] = a[i-1][1]
     a[i][9] = a[i-1][8]
     for j in range(1, 9):
-        a[i][j] = a[i-1][j-1]+a[i-1][j+1]
+        a[i][j] = li[j-1]+li[j+1]
 
 print(sum(a[n])%1000000000)
+
+
+
+#
 
 
 

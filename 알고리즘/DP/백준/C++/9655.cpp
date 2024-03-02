@@ -39,8 +39,8 @@ int main()
         else
             cout << "CY" << '\n';
     }
-}
 
+}
 
 
 

@@ -1,0 +1,110 @@
+// 지름길
+// 총 길이가 D인 고속도로를 지나야 한다. 중간 중간에 지름길이 있다. 여러 지름길을 통해 고속도로를 모두 지날 때, 가장 짧은 길이를 구하라.
+
+
+// 내 답안1
+//#include <iostream>
+//#include <vector>
+//#include <queue>
+//#include <algorithm>
+//
+//#define INF 987654321
+//#define MAX_D 10001
+//
+//using namespace std;
+//
+//vector<pair<int, int>> graph[MAX_D];
+//int d[MAX_D];
+//
+//int main()
+//{
+//    ios_base::sync_with_stdio(false);
+//    cin.tie(0);
+//
+//    int N, D;
+//
+//    cin >> N >> D;
+//    for(int i=0; i<N; i++)
+//    {
+//        int a, b, c;
+//
+//        cin >> a >> b >> c;
+//        if(b > D) continue;
+//        graph[0].push_back({a, a});
+//        graph[0].push_back({b, b});
+//        graph[a].push_back({D, D-a});
+//        graph[b].push_back({D, D-b});
+//        if(b-a < c) continue;
+//        graph[a].push_back({b, c});
+//    }
+//
+//    fill(d, d+MAX_D, INF);
+//
+//    priority_queue<pair<int, int>> pq;
+//    pq.push({0, 0});
+//
+//    d[0] = 0;
+//
+//    while(!pq.empty())
+//    {
+//        int dist = -pq.top().first;
+//        int now = pq.top().second;
+//        pq.pop();
+//
+//        if(d[now] < dist) continue;
+//        for(int i=0; i<graph[now].size(); i++)
+//        {
+//            int cost = d[now] + graph[now][i].second;
+//            if(d[graph[now][i].first] > cost)
+//            {
+//                d[graph[now][i].first] = cost;
+//                pq.push({-cost, graph[now][i].first});
+//            }
+//        }
+//    }
+//
+//    cout << d[50] << '\n';
+//}
+
+
+
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <algorithm>
+
+#define INF 987654321
+#define MAX_D 10001
+
+using namespace std;
+
+int d[MAX_D][MAX_D+1];
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+
+    int N, D;
+
+    cin >> N >> D;
+    for(int i=0; i<N; i++)
+    {
+        int a, b, c;
+
+        cin >> a >> b >> c;
+        d[b][a] = c;
+    }
+    for(int i=0; i<=D; i++)
+    {
+        d[i][0] = i;
+        if(i==0) continue;
+        d[i][MAX_D] =
+
+    }
+
+
+
+
+    cout << d[50] << '\n';
+}

@@ -16,6 +16,6 @@
 + [정렬]()
 
 ## 언어 
-+ [C++](https://github.com/dngus1683/codingTestStudy/edit/master/README.md#c)
++ [C++](https://github.com/dngus1683/codingTestStudy?tab=readme-ov-file#C++)
 
 ## C++

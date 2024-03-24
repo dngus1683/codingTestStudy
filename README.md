@@ -4,7 +4,7 @@
 각 알고리즘 별로 공부한 내용들과, 백준 같은 프로그래밍 문제 사이트의 문제들을 푼 것들을 정리해 놓았다.
 
 ## 알고리즘 분류
-+ [DFS & BFS]()
++ [DFS & BFS](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/DFS%20%26%20BFS)
 + [Dynamic Programming]()
 + [Disjointset]()
 + [Dijkstra](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/dijkstra/%EB%B0%B1%EC%A4%80)

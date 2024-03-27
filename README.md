@@ -7,7 +7,7 @@
 + [DFS & BFS](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/DFS%20%26%20BFS)
 + [Dynamic Programming](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/DP)
 + [Disjointset]()
-+ [Dijkstra](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/dijkstra/%EB%B0%B1%EC%A4%80)
++ [Dijkstra](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/dijkstra)
 + [구현]()
 + [그리디 알고리즘]()
 + [문자열]()

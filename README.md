@@ -6,7 +6,7 @@
 ## 알고리즘 분류
 + [DFS & BFS](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/DFS%20%26%20BFS)
 + [Dynamic Programming](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/DP)
-+ [Disjointset]()
++ [Disjointset](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/Disjointset%20)
 + [Dijkstra](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/dijkstra)
 + [구현]()
 + [그리디 알고리즘]()

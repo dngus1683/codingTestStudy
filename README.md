@@ -11,10 +11,10 @@
 + [구현](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EA%B5%AC%ED%98%84)
 + [그리디 알고리즘](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EA%B7%B8%EB%A6%AC%EB%94%94%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
 + [문자열]()
-+ [브루트포스 알고리즘]()
 + [수학]()
 + [정렬]()
-
++ [이진 탐색](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%9D%B4%EC%A7%84%20%ED%83%90%EC%83%89)
+  
 ## 언어 
 + [C++](https://github.com/dngus1683/codingTestStudy?tab=readme-ov-file#C++)
 

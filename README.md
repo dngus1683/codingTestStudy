@@ -10,9 +10,9 @@
 + [Dijkstra](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/dijkstra)
 + [구현](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EA%B5%AC%ED%98%84)
 + [그리디 알고리즘](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EA%B7%B8%EB%A6%AC%EB%94%94%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
-+ [문자열]()
-+ [수학]()
-+ [정렬]()
++ [문자열](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%AC%B8%EC%9E%90%EC%97%B4)
++ [수학](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%88%98%ED%95%99)
++ [정렬](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%A0%95%EB%A0%AC)
 + [이진 탐색](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%9D%B4%EC%A7%84%20%ED%83%90%EC%83%89)
   
 ## 언어 

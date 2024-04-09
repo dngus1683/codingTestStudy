@@ -1,9 +1,9 @@
 # 수학
-+ [소수(prime number)](#소수(prime number))
++ [소수(prime number)](#소수)
 
 
 
-## 소수(prime number)
+## 소수
 소수는 1이상의 자연수 중, 1과 자기 자신만을 약수로 갖는 수다.
 ### Implementation
 + C++

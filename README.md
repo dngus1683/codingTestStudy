@@ -17,6 +17,6 @@
 + [자료 구조](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%9E%90%EB%A3%8C%20%EA%B5%AC%EC%A1%B0)
   
 ## 언어 
-+ [C++](https://github.com/dngus1683/codingTestStudy?tab=readme-ov-file#C++)
++ [C++](#C++)
 
 ## C++

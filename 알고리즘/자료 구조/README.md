@@ -2,7 +2,7 @@
 + [queue](#queue)
 + [stack](stack)
 + [map](#map)
-
++ [deque](#deque)
 
 + 공통
   
@@ -78,17 +78,72 @@
   **7. begin(), end():** 맵의 시작과 끝을 가리키는 반복자(iterator)를 반환한다.
 
 
-  + **값에 접근:** find()함수는 특정 키를 검색해 해당 하는 키-값 쌍의 반복자 즉, 주소값을 반환한다. 때문에 해당 주소에 arrow 연산자(->)를 통해 키, 값에 접근한다.
+  + **값에 접근**
+
+    find()함수는 특정 키를 검색해 해당 하는 키-값 쌍의 반복자 즉, 주소값을 반환한다. 때문에 해당 주소에 arrow 연산자(->)를 통해 키, 값에 접근한다.
       ```c++
       map<string, int> m;
       
       int key = m.find("apple")->first;
       int value = m.find("apple")->second;
       ```
-  + **키 존재 유무:** 해당 맵에 특정 키 값이 존재하는 지 확인하기 위해서 find()와 end() 함수를 사용한다. find()는 특정 키를 검색했을 때, 해당 키가 맵에 존재하지 않는다면 end() 반복자를 반환한다.
+  + **키 존재 유무**
+
+     해당 맵에 특정 키 값이 존재하는 지 확인하기 위해서 find()와 end() 함수를 사용한다. find()는 특정 키를 검색했을 때, 해당 키가 맵에 존재하지 않는다면 end() 반복자를 반환한다.
       ```c++
       if(m.find("apple") != m.end()) cout << "apple 키 존재" << endl;
       else cout << "apple 키 없음" << endl;
       ```
 
+
+## deque
+덱(deque)은 Double-Ended Queue의 약어로, 큐(Queue)와 스택(Stack)의 특성을 모두 가지고 있는 자료 구조다. 덱은 양쪽 끝에서 삽입과 삭제가 모두 가능하며, 중간에 요소를 삽입하거나 삭제하는 것도 가능하다.
+
+### Implementation
+  + C++
+    C++ 표준 라이브러리(STL)에서는 <deque> 헤더를 통해 덱을 지원하고 있으며, 이를 이용하여 덱을 구현하고 사용할 수 있다.
+
+    **C++ STL Deque 기능**
   
+    **1. push_back():** 덱의 뒤쪽에 요소를 추가한다.
+    
+    **2. push_front():** 덱의 앞쪽에 요소를 추가한다.
+    
+    **3. pop_back():** 덱의 뒤쪽에서 요소를 제거한다.
+    
+    **4. pop_front():** 덱의 앞쪽에서 요소를 제거한다.
+    
+    **5. back():** 덱의 마지막 요소를 반환한다.
+    
+    **6. front():** 덱의 첫 번째 요소를 반환한다.
+    
+    **7. size():** 덱에 저장된 요소의 개수를 반환한다.
+    
+    **8. empty():** 덱이 비어 있는지 여부를 확인한다.
+
+    **9.insert():** 덱의 임의의 위치에 요소를 추가한다.
+
+
+    + **덱 중간에 요소 추가**
+      
+      insert() 함수를 사용하여 중간에 요소를 삽입할 수 있다.
+      ```c++
+      #include <iostream>
+      #include <deque>
+      
+      int main() {
+          std::deque<int> dq = {1, 2, 4, 5};
+      
+          // 덱의 3번째 위치에 요소 3 삽입
+          dq.insert(dq.begin() + 2, 3);
+      
+          // 덱 출력
+          for (int x : dq) {
+              std::cout << x << " ";
+          }
+          std::cout << std::endl;
+      
+          return 0;
+      }
+      ```
+      

@@ -272,3 +272,53 @@
 
 + **개방 주소법(Open Addressing):** 충돌이 발생한 경우, 다른 빈 버킷을 찾아 데이터를 삽입한다. 선형 탐색, 이차 탐색, 이중 해싱 등의 방법이 있다.
 + **체이닝(Chaining):** 각 버킷에 연결 리스트를 사용하여 충돌한 데이터들을 저장한다.
+
+### Implementation
+  + C++
+    C++ 표준 라이브러리(STL)에서는 <unordered_map>, <unordered_set> 헤더를 통해 해시를 지원하고 있으며, 이를 이용하여 해시를 구현하고 사용할 수 있다. unordered_map<key, value>는 키 뿐만 아니라 값까지 저장할 수 있으며, unordered_set<key>는 키 값만 가지므로, 해당 키의 유무를 판단하는데 사용될 수 있다.
+
+    **C++ STL unordered_map / unordered_set 기능**
+  
+    **1. insert({key, value}) or (key):** 새로운 값을 삽입한다. 맵에서 이미 존재하는 키라면 값을 업데이트한다.
+    
+    **2. erase():** 주어진 값을 제거한다.
+    
+    **3. find():** 주어진 값의 반복자(iter)를 반환한다. 존재하지 않는다면 end()를 반환한다.
+    
+    **4. count():** 주어진 키 값을 갖는 원소의 개수를 반환한다.
+    
+    **5. size():** 집합/맵에 저장된 요소의 개수를 반환한다
+    
+    **6. empty():** 집합/맵이 비어 있는지 여부를 확인한다.
+    
+    **7. clear():** 집합/맵의 모든 요소를 제거한다.
+    
+    **8. swap():** 두 컨테이너의 내용을 교환한다.
+
+    **9. map(key):** 주어진 키 값의 원소를 참조한다. (속도: 빠름, 안전: X)
+
+    **10. at(key):** 주어진 키 값의 원소를 참조한다. (속도: 느림, 안전: O)
+
+    + **맵은 인덱싱이 가능하다.**
+  
+      ```c++
+      #include <iostream>
+      #include <unordered_map>
+      
+      int main() {
+          // 해시 맵 생성
+          std::unordered_map<std::string, int> hashMap;
+      
+          // 데이터 추가
+          hashMap["apple"] = 3;
+          hashMap["banana"] = 5;
+          hashMap["orange"] = 2;
+      
+          // 데이터 검색
+          std::cout << "Value of apple: " << hashMap["apple"] << std::endl;
+      
+          return 0;
+      }
+      ```
+
+

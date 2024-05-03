@@ -49,16 +49,13 @@ int main()
 
 
 
-// 답안 예시1
-//#include<stdio.h>
-//int main()
-//{
-//	int a;
-//	scanf("%d",&a);
-//
-//	if(a%7==1||a%7==3){
-//		printf("CY");
-//	}else{
-//		printf("SK");
-//	}
-//}
+// 답안 예시1 - https://www.acmicpc.net/source/43029724
+// #include <stdio.h>
+
+// int main()
+// {
+// 	int a;
+// 	scanf("%d", &a);
+// 	if(a%7==1 || a%7==3) printf("CY");
+// 	else printf("SK"); 
+// }

@@ -5,6 +5,7 @@
 
 
 // 내 답안1
+/*
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <cstring>
@@ -61,29 +62,17 @@ int main() {
 
 
 
-// 답안 예시1
-#include <cstdio>
-
-char arr[510];
-int idx;
-
-int main() {
-	gets(arr);
-	while(arr[idx]) {
-		if (arr[idx] == 'X') {
-			int j = idx;
-			while(arr[j] == 'X') j++;
-			int sz = j - idx;
-			if (sz & 1) {   // 비트 연산자로 인해, 10,100인 2,4는 결과값이 0이 나오므로 조건에 충족x, 이로 인해 2,4의 배수가 아닌 수는 걸러진다.
-				puts("-1");
-				return 0;
-			}
-			int k = (sz / 4)*4;
-			while (k--) arr[idx++] = 'A';
-			while (idx < j) arr[idx++] = 'B';
-		}
-		else idx++;     // 조건문이 X를 기준으로 잡고 있는데 해당되는 X는 이미 A나 B로 바뀌었기 때문에 index에 추가적인 작업이 없어도 다음 진행이 가능하다.
-	}
-	puts(arr);
-	return 0;
+// 답안 예시1 - https://www.acmicpc.net/source/56214089
+#include <stdio.h>
+char x[99],y[99],c,i,j;
+void f(){
+	for(j=0;j<c/4;j++) y[i-c+j*4]=y[i-c+j*4+1]=y[i-c+j*4+2]=y[i-c+j*4+3]=65;
+	if(c%4) y[i-2]=y[i-1]=66;
+	if(x[i]) y[i]='.';
+}
+int main(){
+	scanf("%s",x);
+	for(;x[i];i++) if(x[i]>65) c++; else if(c%2) return 0*printf("-1"); else f(),c=0;
+	if(c%2) printf("-1");
+	else f(),printf("%s",y);
 }

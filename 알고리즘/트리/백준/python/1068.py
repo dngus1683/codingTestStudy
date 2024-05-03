@@ -40,7 +40,7 @@ print(cnt)
 
 
 
-# 답안 예시1
+# 답안 예시1 - https://www.acmicpc.net/source/53838864
 # def dfs(d):
 #     arr[d] = -2
 #     for i in range(n):

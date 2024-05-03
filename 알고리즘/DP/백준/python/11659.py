@@ -27,7 +27,7 @@ for i in range(m):
 
 
 
-# 답안 예시
+# 답안 예시 - https://www.acmicpc.net/source/56177204
 # import sys
 # from itertools import accumulate      # accumulate()함수는 리스트의 누적합 리스트를 추출해주는 함수. 일반 for문을 쓰는 것 보다 속도가 빠르다.
 #

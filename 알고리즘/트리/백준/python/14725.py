@@ -36,7 +36,7 @@ for l in graph:
 
 
 
-# 답안 예시1
+# 답안 예시1 - https://www.acmicpc.net/source/52627979
 # import sys
 # input = sys.stdin.readline
 # sys.setrecursionlimit(10**6)

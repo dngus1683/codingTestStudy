@@ -36,32 +36,20 @@ int main(){
 
 
 
-// 답안 예시1
-//#include <iostream>
-//#include <string>
-//#include <string.h>
-//#include <unistd.h>
-//
-//using namespace std;
-//
-//int main() {
-//    int cnt = 0;
-//    char str[1000000] = {0,};
-//
-//    read(0, str, 1000000);
-//
-//    for(int i = 0; i < 1000000; i++) {
-//        if(str[i] == ' ' && (i != 0)) {
-//            cnt++;
-//        }
-//        else if(str[i] == '\0' || str[i] == '\n') {
-//            if(str[i-1] == ' ')
-//                cnt--;
-//            break;
-//        }
-//    }
-//    cnt++;
-//    printf("%d\n", cnt);
-//
-//    return 0;
-//}ㅁ
+// 답안 예시1 - https://www.acmicpc.net/source/30116689
+// #include <cstdio>
+// #include <unistd.h>
+
+// constexpr int SZ = 1 << 16;
+
+// int main() {
+//     char r[SZ], *p = r; read(0, r, SZ);    
+//     int cnt = 1;
+//     for (; *p == ' '; p++);
+//     for (; ; p++) {
+//         if (p == r + (SZ)) syscall(0, 0, p = r, SZ);
+//         if (*p == '\n') { if (*--p == ' ') cnt--; break; }
+//         if (*p == ' ') cnt++;
+//     }
+//     printf("%d\n", cnt);
+// }

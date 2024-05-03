@@ -28,7 +28,7 @@ int main(){
 
 
 
-// 답안 예시1
+// 답안 예시1 - https://www.acmicpc.net/source/52085659
 // 더 간단한 수식이 있다.
 //#include<stdio.h>
 //int N, M;

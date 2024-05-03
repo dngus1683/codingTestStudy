@@ -34,6 +34,6 @@ int main()
 
 
 
-// 답안 예시1
+// 답안 예시1 - https://www.acmicpc.net/source/59338946
 //#import<ios>
 //main(){int a,x,y;scanf("%d",&a);while(a--){scanf("%d%d%d",&x,&y,&y);y--;printf("%d%02d\n",y%x+1,y/x+1);}}

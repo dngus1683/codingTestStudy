@@ -44,14 +44,16 @@ int main()
 
 
 
-// 답안 예시1
-//#include<stdio.h>
-//int main()
-//{
-//    int a;
-//    scanf("%d",&a);
-//    if(a%7==0||a%7==2){
-//        printf("CY");}
-//    else{
-//        printf("SK");}
-//}
+// 답안 예시1 - https://www.acmicpc.net/source/47450432
+// #include <stdio.h>
+
+// int main(){
+// 	int N = 0;
+// 	scanf("%d",&N);
+// 	if(N%7==0||N%7==2){
+// 		printf("CY");
+// 	}
+// 	else{
+// 		printf("SK");
+// 	}
+// }

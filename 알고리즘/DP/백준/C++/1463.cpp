@@ -42,7 +42,7 @@ int main()
 
 
 
-// 답안 예시1
+// 답안 예시1 - https://www.acmicpc.net/source/45900016
 //#include <stdio.h>
 //int f(int x)
 //{

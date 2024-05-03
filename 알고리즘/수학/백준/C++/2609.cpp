@@ -38,7 +38,7 @@ int main()
 
 
 
-// 답안 예시1
+// 답안 예시1 - https://www.acmicpc.net/source/76544353
 // 같은 알고리즘인데, 이 답안은 for문을 굳이 거꾸로 구현하지 않아 min max 값을 구하지 않아도 된다.
 /*
 #include <stdio.h>

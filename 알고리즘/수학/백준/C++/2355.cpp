@@ -25,7 +25,7 @@ int main(){
 
 
 
-// 답안 예시1
+// 답안 예시1 - https://www.acmicpc.net/source/52900362
 //#include <stdio.h>
 //int main(){
 //    long long int a,b;

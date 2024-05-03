@@ -26,7 +26,7 @@ print(ans)
 
 
 
-# 답안 예시1
+# 답안 예시1 - https://www.acmicpc.net/source/52749865
 # 두 배열에 대해서 동시에 for문을 돌리고 싶을 때, zip()함수를 사용할 수 있다.
 # L, R = input().split()
 # ans = 0

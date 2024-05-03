@@ -47,25 +47,22 @@ print(sum(li))
 
 
 
-# 답안 예시
-# d = [(-1, 0), (1, 0), (0, -1), (0, 1)] # 4방향 탐색
-#
-# def dfs(r, c, visited, total):
-#     global answer
-#     if len(visited) == N+1:
-#         answer += total
-#         return
-#     for idx in range(4):
-#         nr = r + d[idx][0]
-#         nc = c + d[idx][1]
-#         if (nr, nc) not in visited:
-#             visited.append((nr, nc))
-#             dfs(nr, nc, visited, total*probability[idx])
-#             visited.pop()
-#
-# N, ep, wp, sp, np = map(int, input().split())
-# probability = [ep, wp, sp, np]
-# answer = 0
-#
-# dfs(0, 0, [(0, 0)], 1)
-# print(answer * (0.01 ** N))
+# 답안 예시 - https://www.acmicpc.net/source/75383477
+# n, E, W, S, N = map(int, input().split())
+# board = [[0] * (2 * n + 1) for _ in range(2 * n + 1)]
+
+# def prob(x, y, cnt):
+#     if board[x][y] == 1:
+#         return 0
+#     if cnt == 0:
+#         return 1
+#     board[x][y] = 1
+#     ret = 0
+#     ret += E * prob(x, y + 1, cnt - 1)
+#     ret += W * prob(x, y - 1, cnt - 1)
+#     ret += S * prob(x + 1, y, cnt - 1)
+#     ret += N * prob(x - 1, y, cnt - 1)
+#     board[x][y] = 0
+#     return ret
+
+# print(prob(n, n, n) / (100 ** n))

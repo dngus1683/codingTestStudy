@@ -45,7 +45,7 @@ int main()
 
 
 
-// 답안 예시1
+// 답안 예시1 - https://www.acmicpc.net/source/49405005
 // 매 입력되는 숫자마다 소수 판단
 /*
 #include<stdio.h>

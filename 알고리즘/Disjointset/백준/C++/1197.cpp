@@ -91,6 +91,7 @@ int main()
 
 // 내 답안2
 // 프림 알고리즘
+/*
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -160,3 +161,5 @@ int main()
 
 	cout << ans << '\n';
 }
+
+*/

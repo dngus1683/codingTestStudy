@@ -42,7 +42,7 @@ print(sum(a[n])%1000000000)
 
 
 
-# 답안 예시
+# 답안 예시 - https://www.acmicpc.net/source/53935968
 # 뭔자 모르겠음
 # a=1
 # b=c=d=e=2

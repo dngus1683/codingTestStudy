@@ -42,7 +42,7 @@ for i in range(1, n+1):
 print(math.ceil(m/2))
 
 
-# 답안 예시
+# 답안 예시 - https://www.acmicpc.net/source/61197948
 # import sys
 # import math
 #

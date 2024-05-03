@@ -64,7 +64,7 @@ int main()
 
 
 
-// 답안 예시
+// 답안 예시 - https://www.acmicpc.net/source/10972504
 //#include<cstdio>
 //int main(){
 //    int f[60]={1,0},T,a;

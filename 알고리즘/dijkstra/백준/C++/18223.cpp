@@ -84,7 +84,7 @@ int main()
 
 
 
-// 답안 예시1
+// 답안 예시1 - https://www.acmicpc.net/source/17953449
 // 다익스트라 계산 중 건우를 지났는지 판단
 //#include <cstdio>
 //#include <algorithm>

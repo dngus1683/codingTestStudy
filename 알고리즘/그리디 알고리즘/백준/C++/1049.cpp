@@ -46,36 +46,20 @@ int main() {
 
 
 
-// 답안 예시1
-//#include <cstdio>
-//#include <algorithm>
-//using namespace std;
-//
-//int main() {
-//	int n,m,s=1000,t=1000,a,b;
-//	scanf("%d%d",&n,&m);
-//	while(m--)
-//		scanf("%d%d",&a,&b),t=min(t,a),s=min(s,b);
-//	a=0;
-//	while(n>=6)
-//		a+=min(t,s*6),n-=6;
-//	printf("%d",a+min(t,s*n));
-//}
-
-
-
-// 답안 예시2
-//#include<stdio.h>
-//
-//int n,m,i,p,q,a,b;
-//int main(){
-//	scanf("%d%d",&n,&m);
-//	p=q=9999;
-//	for(i=0;i<m;i++){
-//		scanf("%d%d",&a,&b);
-//		p=p<a?p:a;
-//		q=q<b?q:b;
-//	}
-//	p=p<q*6?p:q*6;
-//	printf("%d",n/6*p+(n%6*q<p?n%6*q:p));
-//}
+// 답안 예시1 - https://www.acmicpc.net/source/60007983
+// #include <stdio.h>
+// int main()
+// {
+//   int n, m, a, b, mp=1000, ms=1000;
+//   scanf("%d%d",&n,&m);
+//   while(m--) 
+//   { 
+//   scanf("%d%d",&a,&b); 
+//   mp=(a<mp)?a:mp; 
+//   ms=(b<ms)?b:ms; 
+//   }
+//   if(ms*6<mp)
+//   mp=ms*6;
+//   ms=((n%6)*ms>mp)?mp:(n%6)*ms;
+//   printf("%d\n",(n/6)*mp+ms);
+// }

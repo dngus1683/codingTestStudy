@@ -48,7 +48,7 @@ print(''.join(LCS[1:d[-1][-1]+1]))
 
 
 
-# 답안 예시1
+# 답안 예시1 - https://www.acmicpc.net/source/44424215
 # s1 = input()
 # s2 = input()
 #

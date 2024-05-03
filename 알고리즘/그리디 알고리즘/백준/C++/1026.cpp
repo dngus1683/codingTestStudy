@@ -35,5 +35,3 @@ int main() {
 	printf("%d\n", S);
 	return 0;
 }
-
-*/

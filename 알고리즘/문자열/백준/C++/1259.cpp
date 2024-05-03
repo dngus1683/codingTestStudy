@@ -36,7 +36,7 @@ int main()
 
 
 
-// 답안 예시1
+// 답안 예시1 - https://www.acmicpc.net/source/61636099
 // 입력 숫자를 거꾸로 돌려서 기존과 같은지 확인
 //#include <stdio.h>
 //int main()

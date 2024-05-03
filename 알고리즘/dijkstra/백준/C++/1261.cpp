@@ -87,7 +87,7 @@ int main()
 
 
 
-// 답안 예시1
+// 답안 예시1 - https://www.acmicpc.net/source/11387049
 //#include <cstdio>
 //#include <queue>
 //#define X first

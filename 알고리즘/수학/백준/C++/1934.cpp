@@ -30,7 +30,7 @@ int main(){
 
 
 
-// 답안 예시1
+// 답안 예시1 - https://www.acmicpc.net/source/35767919
 // 유클리드 호제법
 // f(a, b) = gcd(a, b)라 하자.
 

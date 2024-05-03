@@ -31,7 +31,7 @@ for i in N:
 
 
 
-# 답안 예시
+# 답안 예시 - https://www.acmicpc.net/source/52744356
 # T = int(input())
 # a = [int(input()) for _ in range(T)]
 # c = [0]*(11)

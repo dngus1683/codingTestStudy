@@ -24,7 +24,7 @@ int main()
 
         cin >> n;
 
-        int d[n+1];
+        int d[MAX_N];
 
         d[1] = 1;
         d[2] = 2;

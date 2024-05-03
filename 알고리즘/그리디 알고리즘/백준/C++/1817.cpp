@@ -37,24 +37,20 @@ int main() {
 
 
 
-// 답안 예시1
-//#include <cstdio>
-//#include <algorithm>
-//
-//using namespace std;
-//
-//int main() {
-//  int n, m;
-//  scanf("%d%d", &n, &m);
-//  int ans = 0, left = 0;
-//  for (int i = 0; i < n; i++) {
-//	int v;
-//	scanf("%d", &v);
-//	if (left < v) {
-//	  left = m; ans++;
-//	}
-//	left -= v;
-//  }
-//  printf("%d\n", ans);
-//  return 0;
-//}
+// 답안 예시1 - https://www.acmicpc.net/source/44667919
+// #include <stdio.h>
+// int N, M, s, m, n = 0;
+// int main() {
+// 	scanf("%d%d", &N, &M);
+// 	s = M;
+// 	while(N--) {
+// 		scanf("%d", &m);
+// 		if(s + m <= M) {
+// 			s += m;
+// 		} else {
+// 			s = m;
+// 			n++;
+// 		}
+// 	}
+// 	printf("%d", n);
+// }

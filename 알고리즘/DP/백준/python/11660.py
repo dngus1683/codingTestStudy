@@ -48,7 +48,7 @@ for i in range(M):
 
 
 
-# 답안 예시
+# 답안 예시 - https://www.acmicpc.net/source/44777449
 # import sys; input = sys.stdin.readline
 # from itertools import accumulate
 # from operator import add

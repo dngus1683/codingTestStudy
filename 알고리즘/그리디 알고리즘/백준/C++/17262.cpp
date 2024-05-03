@@ -39,22 +39,20 @@ int main() {
 
 
 
-// 답안 예시1
-//#include <bits/stdc++.h>
-//using namespace std;
-//
-//int N, x, y = 1000000;
-//
-//int main() {
-//	ios::sync_with_stdio(0); cin.tie(0);
-//
-//	cin >> N;
-//	for (int i=0; i<N; i++) {
-//		int a, b;
-//		cin >> a >> b;
-//		x = max(x, a);
-//		y = min(y, b);	//본인은 index 1일때 최댓값 최솟값을 초기화 하고 그 다음부터 비교를 시작했지만 해당 코드에서는 최솟값을 비교할 때는 주어진 maximum값을 활용하고 최댓값을 구할 때는 디폴트인 0을 활용한다.
-//	}
-//
-//	cout << max(0, x-y) << '\n'; // 본인은 삼항 연산자를 활용하여 답안을 구분했지만 해당 코드에서는 단지 두 크기만 비교한다.
-//}
+// 답안 예시1 - https://www.acmicpc.net/source/37769153
+// #include <bits/stdc++.h>
+// using namespace std;;;;;;;;;;;;;;;;
+// int main(){
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(nullptr);
+//     int n;
+//     cin >> n;
+//     int x=0,y=100000;
+//     for(int i=0;i<n;i++){
+//         int a,b;
+//         cin >> a >> b;
+//         x=max(x,a);
+//         y=min(y,b);	//본인은 index 1일때 최댓값 최솟값을 초기화 하고 그 다음부터 비교를 시작했지만 해당 코드에서는 최솟값을 비교할 때는 주어진 maximum값을 활용하고 최댓값을 구할 때는 디폴트인 0을 활용한다.
+//     }
+//     cout << max(0,x-y);	// 본인은 삼항 연산자를 활용하여 답안을 구분했지만 해당 코드에서는 단지 두 크기만 비교한다.
+// }

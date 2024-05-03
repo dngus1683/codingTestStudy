@@ -111,7 +111,7 @@ else:
 
 
 
-# 답안 예시
+# 답안 예시 - https://www.acmicpc.net/source/54360331
 # 내 답안2와 유사한 접근, 구현은 훨씬 간단하다.
 # import math
 #

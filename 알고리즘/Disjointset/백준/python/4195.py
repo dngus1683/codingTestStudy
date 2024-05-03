@@ -60,45 +60,34 @@ solution(T)
 
 
 
-# 답안 예시
-# Root node를 찾아주는 함수
-# def find(x):
-#     if x == parent[x]:
-#         return x
-#     else:
-#         root_x = find(parent[x])
-#         parent[x] = root_x
-#         return parent[x]
-#
-#
-# y의 Root 노드가 x의 Root 노드와 같지 않으면
-# y의 Root 노드가 x의 Root 노드의 자식이 되도록 하는 함수
-# def union(x, y):
-#     root_x = find(x)
-#     root_y = find(y)
-#
-#     if root_x != root_y:
-#         parent[root_y] = root_x
-#         number[root_x] += number[root_y]
-#
-#
-# test_cases = int(input())
-#
-# for _ in range(test_cases):
-#     parent = dict()
-#     number = dict()
-#
-#     f = int(input())
-#
-#     for _ in range(f):
-#         x, y = input().split(" ")
-#
-#         if x not in parent:
-#             parent[x] = x
-#             number[x] = 1
-#         if y not in parent:
-#             parent[y] = y
-#             number[y] = 1
-#
-#         union(x, y)
-#         print(number[find(x)])
+# 답안 예시 - https://www.acmicpc.net/source/61300079
+# from sys import stdin
+# input = stdin.readline
+
+# def solve():
+#     root = {}
+
+#     def findroot(node):
+#         if node not in root:
+#             root[node] = 1
+#             return node
+#         elif type(root[node]) == int:
+#             return node
+#         else:
+#             root[node] = findroot(root[node])
+#             return root[node]
+
+#     def union(r1, r2):
+#         root[r1] += root[r2]
+#         root[r2] = r1
+
+#     for _ in range(int(input())):
+#         name1, name2 = input().split()
+#         root1, root2 = findroot(name1), findroot(name2)
+#         if root1 != root2:
+#             union(root1, root2)
+#         print(root[root1])
+
+
+# for t in range(int(input())):
+#     solve()

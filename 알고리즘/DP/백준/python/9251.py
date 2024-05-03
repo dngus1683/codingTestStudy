@@ -43,40 +43,23 @@
 
 
 
-# 답안 예시
+# 답안 예시 - https://www.acmicpc.net/source/37428472
 import sys
-
 input = sys.stdin.readline
-str1 = input()
-str2 = input()
-d = [[0 for _ in range(len(str2) - 1)] for _ in range(len(str1) - 1)]
+X = input().rstrip()
+Y = input().rstrip()
 
-for i in range(0, len(str1) - 1):
-    for j in range(0, len(str2) - 1):
-        if str1[i] == str2[j]:
-            d[i][j] += d[i-1][j-1]+1
-        else:
-            d[i][j] = max(d[i-1][j], d[i][j-1])
+def answer(X, Y) :
+	DP = [0] * 1000
 
-print(d[-1][-1])
+	for i, x in enumerate(X):
+		cnt = 0
+		for j, y in enumerate(Y):
+			if cnt < DP[j]:
+				cnt = DP[j]
+			elif x == y:
+				DP[j] = cnt + 1
+	
+	return max(DP)
 
-
-
-
-
-
-#
-# import sys
-#
-# string_a = ' ' + sys.stdin.readline().rstrip()
-# string_b = ' ' + sys.stdin.readline().rstrip()
-# dp = [[0] * len(string_b) for _ in range(len(string_a))]
-#
-# for i in range(1, len(string_a)):
-#     for j in range(1, len(string_b)):
-#         if string_a[i] == string_b[j]:
-#             dp[i][j] = dp[i - 1][j - 1] + 1
-#         else:
-#             dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
-#
-# print(dp[-1][-1])
+print(answer(X, Y))

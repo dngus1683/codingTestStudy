@@ -108,7 +108,7 @@ int main()
 
 
 
-// 답안 예시
+// 답안 예시 - https://www.acmicpc.net/source/36352647
 // queue와 비슷한 방식으로, 양방향 queue를 구현해야 하므로 첫 배열 인덱스를 0이 아닌 중간값으로 잡고 좌우로 이동하도록 구현.
 /*
 #include <stdio.h>

@@ -45,22 +45,15 @@ int main() {
 
 
 
-// 답안 예시1
-// 이전 값을 저장하면서 그값과 비교하며 계산하는 method
+// 답안 예시1 - https://www.acmicpc.net/source/20220726
 
-//#define _CRT_SECURE_NO_WARNINGS
-//#include<cstdio>
-//
-//int d[2];
-//char b, c;
-//
-//int main() {
-//	while (true) {
-//		scanf("%c", &c);
-//
-//		if (c != '1' && c != '0')break;
-//		if (c != b)d[c - '0']++, b = c;
-//	}
-//	printf("%d", (d[0] > d[1]) ? d[1] : d[0]);
-//}
+// #include <cstdio>
 
+// int main() {
+// 	int c1 = -1, c2, cnt = 1;
+// 	while ((c2 = getchar()) != 10) {
+// 		if (c1 != -1 && c1 != c2) ++cnt;
+// 		c1 = c2;
+// 	}
+// 	printf("%d", cnt / 2);
+// }

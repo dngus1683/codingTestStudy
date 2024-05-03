@@ -85,7 +85,7 @@ int main()
 
 
 
-// 답안 예시1
+// 답안 예시1 - https://www.acmicpc.net/source/8573746
 // top을 배열의 인덱스로 활용한 간단한 방법
 /*
 #include<stdio.h>

@@ -41,22 +41,26 @@ int main() {
 
 
 
-// 답안 예시1
-//#include <stdio.h>
-//
-//int n;
-//
-//int main() {
-//	scanf("%d", &n);
-//
-//	int cnt = 0;
-//	while (n != 1 && n % 5 != 0) {
-//		n = n - 2;
-//		cnt++;
-//	}
-//
-//	if (n == 1) cnt = -1;
-//	else cnt += (n / 5);
-//
-//	printf("%d", cnt);
-//}
+// 답안 예시1 - https://www.acmicpc.net/source/62406343
+// #include <stdio.h>
+// int main()
+// {
+// 	int m;
+// 	int c=0;
+// 	scanf("%d", &m);
+// 	if(m==1||m==3)
+// 	{
+// 		printf("-1");
+// 		return 0;
+// 		}
+// 	else
+// 	{
+// 		while(m%5!=0)
+// 		{
+// 			m=m-2;
+// 			c+=1;
+// 		}
+// 		c=c+m/5;
+// 	}
+// 	printf("%d",c);
+// }

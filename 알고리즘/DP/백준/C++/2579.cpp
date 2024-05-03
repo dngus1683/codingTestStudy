@@ -49,7 +49,7 @@ int main()
 
 
 
-// 답안 예시1
+// 답안 예시1 - https://www.acmicpc.net/source/11566859
 //#include<cstdio>
 //#define Max(a,b)(a>b?a:b)
 //

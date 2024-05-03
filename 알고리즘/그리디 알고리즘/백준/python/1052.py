@@ -34,7 +34,7 @@ print(ans)
 
 
 
-# 답안 예시1
+# 답안 예시1 -  https://deok2kim.tistory.com/317
 # 문제 접근법이 중요하다.
 # 뭔가 2진법같이 생겼다.
 # 2진법으로 풀어보자
@@ -58,5 +58,3 @@ print(ans)
 #     N += 2**idx
 #
 # print(purchased_water_bottle_cnt)
-
-# 출처: https://deok2kim.tistory.com/317

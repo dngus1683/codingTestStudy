@@ -43,7 +43,7 @@ for i in range(m):
 
 
 
-# 답안 예시
+# 답안 예시 - https://www.acmicpc.net/source/55448622
 # import io, os, sys
 #
 # input = io.BytesIO(os.read(0, os.fstat(0).st_size)).readline

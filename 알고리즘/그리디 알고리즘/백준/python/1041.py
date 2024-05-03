@@ -48,7 +48,7 @@ print(ans)
 
 
 
-# 답안 예시1
+# 답안 예시1 - https://www.acmicpc.net/source/53023884
 # 각각 마주 보는 면 중 최솟값을 구하고, 오름차순으로 정렬하여, 선택된 세 면을 각각 따로 계산한다.
 # n = int(input())
 # a = list(map(int, input().split()))

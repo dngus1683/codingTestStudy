@@ -57,7 +57,7 @@ solution(T)
 
 
 
-# 답안 예시1
+# 답안 예시1 - https://www.acmicpc.net/source/54381102
 # import sys
 # input = sys.stdin.readline
 #
@@ -70,7 +70,7 @@ solution(T)
 #     print(n - 1)
 
 
-# 답안 예시2
+# 답안 예시2 - https://www.acmicpc.net/source/56321635
 # input = open(0, 'rt').read().rstrip().split('\n')
 #
 # T = int(input[0])

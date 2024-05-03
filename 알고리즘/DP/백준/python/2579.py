@@ -34,20 +34,16 @@ print(max(d[n]))
 
 
 
-# 답안 예시
+# 답안 예시 - https://www.acmicpc.net/source/30515374
 # import sys
-# input = sys.stdin.readline
-# n = int(input())
-# dp = [0]*301
-# scores = [0]*301
-#
+# n = int(sys.stdin.readline())
+# s = [0 for i in range(300)]
+# dp = [0 for i in range(300)]
 # for i in range(n):
-#     scores[i+1] = int(input())
-#
-# dp[1] = scores[1]
-# dp[2] = dp[1] + scores[2]
-#
-# for i in range(3, n+1):
-#     dp[i] = max(dp[i-2]+scores[i],dp[i-3]+scores[i-1]+scores[i])
-#
-# print(dp[n])
+#     s[i] = int(sys.stdin.readline())
+# dp[0] = s[0]
+# dp[1] = s[0] + s[1]
+# dp[2] = max(s[0] + s[2], s[1] + s[2])
+# for i in range(3, n):
+#     dp[i] = max(dp[i - 3] + s[i - 1] + s[i], dp[i - 2] + s[i])
+# print(dp[n - 1])

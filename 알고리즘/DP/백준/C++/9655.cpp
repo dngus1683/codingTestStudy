@@ -47,12 +47,12 @@ int main()
 
 
 
-// 답안 예시1
+// 답안 예시1 - https://www.acmicpc.net/source/45432802
 // 단순히 n이 홀수인지 짝수인지 확인만 했으면 됐음.
 // 아래는 비트 연산자를 활용해서 해당 내용을 구현함.
 //#import<ios>
 //main(int n){scanf("%d",&n);puts(n&1?"SK":"CY");}
 
-// 답안 예시2
-//#include<cstdio>
-//main(){int n;scanf("%d",&n);puts(n%2?"SK":"CY");}
+// 답안 예시2 - https://www.acmicpc.net/source/40621594
+// #import<ios>
+// main(int n){scanf("%d",&n);puts((n%2)?"SK":"CY");}

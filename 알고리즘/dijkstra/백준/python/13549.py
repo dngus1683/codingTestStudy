@@ -47,12 +47,14 @@ print(dijkstra(N))
 
 
 
-# 답안 예시
-# def f(n, k):
-#  if n>=k:return n-k
-#  elif k==1:return 1
-#  elif k%2==0:return min(k-n,f(n,k//2))
-#  else:return 1+min(f(n,k+1),f(n,k-1))
-#
-# n,k=map(int,input().split())
-# print(f(n,k))
+# 답안 예시 - https://www.acmicpc.net/source/77104287
+# import sys
+
+# def search(N,K):
+#     if K <= N: return N - K
+#     elif N == 0: return 1 + search(N+1,K)
+#     elif K%2 == 0: return min(K-N,search(N,K//2))
+#     else: return 1 + min(search(N,K-1),search(N,K+1))
+
+# N, K = map(int,sys.stdin.readline().split())
+# print(search(N,K))

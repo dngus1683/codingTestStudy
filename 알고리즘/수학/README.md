@@ -121,10 +121,10 @@ $$
 
 $$
 \begin{aligned}
-M &= lcm(3,5,7) = 105\\
-t_1&=M \div 3 = 35, \ t_2=M \div 5 = 21, \ t_3=M \div 7 = 15\\
-t^{-1}_1 &\equiv 2 \ (mod \ 3), \ t^{-1}_2 \equiv 1 \ (mod \ 5), \ t^{-1}_3 \equiv 1 \ (mod \ 7)\\
-x &= (2 \cdot 35 \cdot 2+ 3 \cdot 21 \cdot 1+ 2 \cdot 15 \cdot1) \ mod \ 105 = 23
+&M = lcm(3,5,7) = 105\\
+&t_1=M \div 3 = 35, \ t_2=M \div 5 = 21, \ t_3=M \div 7 = 15\\
+&t^{-1}_1 \equiv 2 \ (mod \ 3), \ t^{-1}_2 \equiv 1 \ (mod \ 5), \ t^{-1}_3 \equiv 1 \ (mod \ 7)\\
+&x = (2 \cdot 35 \cdot 2+ 3 \cdot 21 \cdot 1+ 2 \cdot 15 \cdot1) \ mod \ 105 = 23
 \end{aligned}
 $$
 

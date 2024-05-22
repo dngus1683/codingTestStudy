@@ -21,4 +21,34 @@
 ## Implementation
 + C++
   
-  [예시 문제](https://github.com/dngus1683/codingTestStudy/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B6%84%ED%95%A0%20%EC%A0%95%EB%B3%B5/%EB%B0%B1%EC%A4%80/C%2B%2B/2630.cpp)
+  + [예시 문제](https://github.com/dngus1683/codingTestStudy/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B6%84%ED%95%A0%20%EC%A0%95%EB%B3%B5/%EB%B0%B1%EC%A4%80/C%2B%2B/2630.cpp)
+  
+  + **분할 정복 거듭제곱**
+
+    거듭제곱의 지수가 굉장히 크면 최악의 경우 시간 복잡도가 O(n)임에도 시간이 부족할 수 있다. 이를 방지하기 위해 분할 정복을 활용하여 거듭제곱의 계산 시간을 줄인다.
+
+    + 수식
+  
+      > 짝수 지수 \( n \)에 대한 재귀 관계: $a^n = (a^{n/2})(a^{n/2}) \quad \text{(if \( n \) is even)}$      
+      > 홀수 지수 \( n \)에 대한 재귀 관계: $a^n = (a^{(n-1)/2})(a^{(n-1)/2})a \quad \text{(if \( n \) is odd)}$
+
+    + 코드
+      ```c++
+      int divide(int a, int n)
+      {
+      	if (x == 1 || x == 0)
+      		return a;
+      	else
+      	{
+      		ullint value = divide(n / 2);
+      		if (a % 2 == 0)
+      		{
+      			return (value * value);
+      		}
+      		else
+      		{
+      			return ((value * value) * a);
+      		}
+      	}
+      }
+      ``` 

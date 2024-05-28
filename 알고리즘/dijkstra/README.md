@@ -142,7 +142,6 @@ void dijkstra(node start)
 
 # Floyd-Warshall (플로이드-워셜)
 
-## Introduction
 플로이드-워셜(Floyd-Warshall) 알고리즘은 모든 쌍 최단 경로를 찾는 알고리즘으로, 모든 정점에서 모든 정점으로의 최단 경로를 찾는다. 음의 가중치를 허용하는 그래프에서도 사용할 수 있으며, 모든 정점에 대해 최단 거리를 찾아야 할 때는 다익스트라 알고리즘보다 적절할 수 있다.
 
 ## Algorithm
@@ -215,3 +214,73 @@ void floydWarshall(int V) {
 
 ## References
 - 이미지 출처: [Floyd-Warshall algorithm - Wikipedia](https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm)
+
+
+--------------------------
+
+
+# 벨만-포드 알고리즘 (Bellman-Ford Algorithm)
+
+벨만-포드 알고리즘(Bellman-Ford Algorithm)은 가중치가 있는 그래프에서 한 정점에서 다른 모든 정점으로의 최단 경로를 찾는 알고리즘으로, 다익스트라 알고리즘과의 차이점은 **가중치가 음수인 간선이 포함된 그래프에서도 동작**한다.
+
+## Algorithm
+벨만-포드 알고리즘:
+
+1. 시작 정점의 거리를 0으로, 나머지 정점의 거리를 무한대로 설정한다.
+2. 모든 간선에 대해 정점을 V-1번 반복하며 거리를 갱신한다.
+3. 모든 간선을 다시 검사하여 거리가 더 줄어들 수 있다면 음수 사이클이 존재하는 것이다.
+
+## Pseudocode
+```plaintext
+function BellmanFord(Graph, source):
+    distance[source] = 0
+    
+    # 반복적으로 모든 간선을 확인하며 거리 갱신
+    for i from 1 to size(Graph.V) - 1:
+        for each edge (u, v) with weight w in Graph.E:
+            if distance[u] + w < distance[v]:
+                distance[v] = distance[u] + w
+    
+    # 음수 사이클 존재 여부 확인
+    for each edge (u, v) with weight w in Graph.E:
+        if distance[u] + w < distance[v]:
+            return "Graph contains a negative-weight cycle"
+    
+    return distance
+```
+
+
+## Complexity
+- 시간 복잡도: O(VE) (V는 정점의 수, E는 간선의 수)
+
+
+## Implementation
++ ### C++
+```c++
+void BellmanFord(vector<Edge>& edges, int V, int E, int source) {
+    vector<int> distance(V, INT_MAX);
+    distance[source] = 0;
+
+    // 모든 정점을 V-1번 반복하여 최단 거리 계산
+    for (int i = 1; i <= V - 1; ++i) {
+        for (int j = 0; j < E; ++j) {
+            int u = edges[j].source;
+            int v = edges[j].destination;
+            int weight = edges[j].weight;
+            if (distance[u] != INT_MAX && distance[u] + weight < distance[v]) {
+                distance[v] = distance[u] + weight;
+            }
+        }
+    }
+
+    // 한번 더 최단거리를 계산했을 때, 또 새 값이 갱신이 된다면, 해당 맵은 사이클이 존재한다.
+    for (int i = 0; i < E; ++i) {
+        int u = edges[i].source;
+        int v = edges[i].destination;
+        int weight = edges[i].weight;
+        if (distance[u] != INT_MAX && distance[u] + weight < distance[v]) {
+            cout << "Graph contains negative-weight cycle" << endl;
+            return;
+        }
+    }
+```

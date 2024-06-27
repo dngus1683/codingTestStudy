@@ -1,0 +1,151 @@
+// 팰린드롬 분할
+// 문자열 S가 주어진다. 해당 문자열을 팰린드롬의 집합으로 나눌 때, 집합의 원소 개수의 최솟값을 구하라.
+
+// 내 답안1
+/*
+#include <iostream>
+#include <string>
+#include <vector>
+
+#define INF 987654321
+
+using namespace std;
+
+int Pal[2501][2501];
+
+inline int min(const int& a, const int& b)
+{
+	return (a < b ? a : b);
+}
+
+bool IsPalindrome(string s1, const int length)
+{
+	for (int i = 0; i < length / 2; i++)
+	{
+		if (s1[i] != s1[length - 1 - i])
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+int Brute(string& s, int start, int length, int cnt)
+{
+	if (start == length)
+	{
+		return cnt;
+	}
+
+	int ans = INF;
+
+	for (int end = start; end < length; end++)
+	{
+		string sub = s.substr(start, end - start + 1);
+		if (Pal[start][end] == 0)
+		{
+			if (IsPalindrome(sub, j))
+			{
+				Pal[start][end] = 1;
+			}
+			else
+			{
+				Pal[start][end] = min(Pal[start][end], Pal[start][end-1] + Pal[end-1][end]);
+			}
+		}
+		if (Pal[end + 1][length-1] == 0)
+		{
+			ans = min(ans, Brute(s, start + j, length, cnt + 1));
+		}
+	}
+	return ans;
+}
+
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(0);
+
+	int ans = INF;
+	string S = "";
+
+	cin >> S;
+
+	for (int i = 0; i < 2501; i++)
+	{
+		Pal[i][i];
+	}
+
+	cout << Brute(S, 0, S.size(), 0) << '\n';
+}
+/*
+*/
+
+
+
+#include <iostream>
+#include <string>
+#include <vector>
+
+#define INF 987654321
+
+using namespace std;
+
+int Pal[2501][2501];
+
+inline int min(const int& a, const int& b)
+{
+	return (a < b ? a : b);
+}
+
+bool IsPalindrome(string s1, const int length)
+{
+	for (int i = 0; i < length / 2; i++)
+	{
+		if (s1[i] != s1[length - 1 - i])
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(0);
+
+	int ans = INF;
+	string S = "";
+
+	cin >> S;
+
+	for (int i = 0; i < 2501; i++)
+	{
+		for (int j = 0; j < 2501; j++)
+		{
+			if (i == j) Pal[i][i] = 1;
+			else Pal[i][j] = INF;
+		}
+	}
+
+	for (int end = S.size() - 1; end >= 0; end--)
+	{
+		for (int start = end-1; start >= 0; start--)
+		{
+			if (IsPalindrome(S.substr(start, end - start + 1), end - start + 1))
+			{
+				Pal[start][end] = 1;
+			}
+			else
+			{
+				Pal[start][end] = Pal[start][end - 1] + Pal[end - 1][end];
+			}
+		}
+	}
+
+}
+
+
+
+

@@ -57,7 +57,7 @@ public:
 
 
 
-// 답안 예시1
+// 답안 예시1 - https://leetcode.com/problems/reverse-nodes-in-k-group/solutions/523641/c-iterative-solution-recursive-solution/
 // 반복문.
 // 인접한 두 노드의 자리를 바꿈. 이를 k번 반복
 /*
@@ -95,7 +95,7 @@ public:
 
 
 
-// 답안 예시2
+// 답안 예시2 - https://leetcode.com/problems/reverse-nodes-in-k-group/solutions/523641/c-iterative-solution-recursive-solution/ 
 // 답안 예시1의 재귀 표현
 /*
 	ListNode* reverseKGroup(ListNode* head, int k) {

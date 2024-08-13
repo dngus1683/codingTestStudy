@@ -27,3 +27,33 @@ int main()
 
 	cout << arr[0] * arr[N - 1] << '\n';
 }
+
+
+// 내 답안2
+/*
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(0);
+
+	int N = 0;
+	int low = 1000001;
+	int high = 0;
+
+	cin >> N;
+	for (int i = 0; i < N; i++)
+	{
+		int num = 0;
+		
+		cin >> num;
+		low = (low < num ? low : num);
+		high = (high > num ? high : num);
+	}
+
+	cout << low * high << endl;
+}
+*/

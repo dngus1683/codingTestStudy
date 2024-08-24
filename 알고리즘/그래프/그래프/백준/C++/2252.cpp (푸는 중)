@@ -1,0 +1,159 @@
+// 줄 세우기
+// 일부 학생들의 키를 비교한 결과가 주어진다. 해당 정보를 토대로 학생들을 키 순서대로 정렬하라.
+
+
+// 내 답안1
+// 연결 리스트 사용 - 시간 초과
+/*
+#include <iostream>
+
+using namespace std;
+
+struct Node
+{
+	int number;
+	Node* parent;
+	Node* child;
+	Node() : number(0), parent(nullptr), child(nullptr) {}
+	Node(int n) : number(n), parent(nullptr), child(nullptr) {}
+	Node(int n, Node* p) : number(n), parent(p), child(nullptr) {}
+	Node(int n, Node* p, Node* c) : number(n), parent(p), child(c) {}
+};
+
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(0);
+
+	int N = 0;
+	int M = 0;
+	Node* head = new Node();
+	Node* tail = new Node(0, head);
+	head->child = tail;
+
+	cin >> N >> M;
+	for (int i = 0; i < M; i++)
+	{
+		int a = 0;
+		int b = 0;
+		Node* aNode = head;
+		Node* bNode = head;
+		bool reverse = false;
+
+		cin >> a >> b;
+
+		while (aNode != tail && bNode != tail)
+		{
+			if (aNode->number == a && bNode->number == b)
+			{
+				if (reverse)
+				{
+					aNode->parent->child = aNode->child;
+					aNode->child->parent = aNode->parent;
+
+					bNode->parent->child = aNode;
+					aNode->parent = bNode->parent;
+					aNode->child = bNode;
+					bNode->parent = aNode;
+					break;
+				}
+				else
+				{
+					break;
+				}
+			}
+			else if (aNode->number == a && bNode->number != b)
+			{
+				bNode = bNode->child;
+			}
+			else if (bNode->number == b && aNode->number != a)
+			{
+				aNode = aNode->child;
+				reverse = true;
+			}
+			else
+			{
+				aNode = aNode->child;
+				bNode = bNode->child;
+			}
+		}
+		if (aNode == tail && bNode == tail)
+		{
+			Node* front = new Node(a, tail->parent);
+			Node* back = new Node(b, front, tail);
+
+			tail->parent->child = front;
+			front->child = back;
+			tail->parent = back;
+		}
+		else if(aNode == tail)
+		{
+			Node* front = new Node(a, bNode->parent, bNode);
+
+			bNode->parent->child = front;
+			bNode->parent = front;
+
+		}
+		else if (bNode == tail)
+		{
+			Node* back = new Node(b, tail->parent, tail);
+
+			tail->parent->child = back;
+			tail->parent = back;
+		}
+	}
+
+	Node* tmp = head->child;
+	while (tmp != tail)
+	{
+		cout << tmp->number << ' ';
+		tmp = tmp->child;
+	}
+}
+*/
+
+
+// 내 답안2
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+#define MAX_N 32001
+
+using namespace std;
+
+vector<pair<int, int>> arr(MAX_N);
+
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(0);
+
+	int N = 0;
+	int M = 0;
+
+	cin >> N >> M;
+
+	for (int i = 1; i <= N; i++)
+	{
+		arr[i] = { MAX_N * 2, i };
+	}
+	for (int i = 0; i < M; i++)
+	{
+		int a = 0;
+		int b = 0;
+
+		cin >> a >> b;
+
+		if (arr[a].first >= arr[b].first)
+		{
+			arr[a].first = arr[b].first - 1;
+		}
+	}
+	sort(arr.begin(), arr.begin()+N+1);
+
+	for (int i = 1; i <= N; i++)
+	{
+		cout << arr[i].second << ' ';
+	}
+}

@@ -2,7 +2,8 @@
 + [문자열 입력](#문자열-입력)
 + [문자열 분리](#문자열-분리)
 + [문자열 자료형 변환](#문자열-자료형-변환)
-
++ [KMP 알고리즘](#KMP-알고리즘)
++ [LCP 알고리즘](#LCP-알고리즘)
   
 ## 문자열 입력
 C++에서 문자열을 입력받는 방법으로 cin.getline()과 getline() 함수가 있다. 이 두 함수는 문자열을 입력 받는 방식이 다르며, 사용하는 상황에 따라 선택할 수 있다.
@@ -153,3 +154,194 @@ C++에서는 std::stoi() 함수를 사용하여 문자열을 정수로 변환할
     }
     ```
 
+---
+## KMP 알고리즘
+
+KMP(Knuth-Morris-Pratt)는 문자열 검색 알고리즘으로, 패턴 내에서 중복되는 접두사와 접미사를 활용해 검색 시간을 줄이는 데 사용된다. 텍스트에서 특정 패턴을 효율적으로 찾기 위해 설계되었으며, **O(n + m)** 시간 복잡도를 갖는다.
+
+### Algorithm
+KMP 알고리즘은 두 단계로 이루어진다:
+1. **부분 일치 테이블(PI 배열) 생성**  
+   패턴 문자열 내에서 접두사와 접미사가 얼마나 일치하는지를 계산한 테이블이다.
+2. **패턴 검색**  
+   PI 배열을 참조하여 텍스트와 패턴을 비교하고, 불일치가 발생하면 불필요한 비교를 건너뛴다.
+
+- 부분 일치 테이블 생성
+  - 패턴의 접두사와 접미사 정보를 기반으로 테이블을 생성한다.
+  - PI 배열의 값은 각 위치에서 가장 긴 접두사와 접미사의 일치 길이를 나타낸다.
+
+### 검색 과정
+1. 텍스트와 패턴의 문자를 처음부터 비교한다.
+2. 불일치가 발생하면 PI 배열을 참조하여 이동할 위치를 결정한다.
+3. 이동 후 다시 비교를 진행하며, 패턴이 텍스트 내에서 발견되면 위치를 반환한다.
+
+### Pseudocode
+```
+function computePI(pattern):
+    pi = [0] * length(pattern)
+    j = 0
+    for i from 1 to length(pattern) - 1:
+        while (j > 0 and pattern[i] != pattern[j]):
+            j = pi[j - 1]
+        if pattern[i] == pattern[j]:
+            j += 1
+            pi[i] = j
+    return pi
+
+function KMP(text, pattern):
+    pi = computePI(pattern)
+    j = 0
+    for i from 0 to length(text) - 1:
+        while (j > 0 and text[i] != pattern[j]):
+            j = pi[j - 1]
+        if text[i] == pattern[j]:
+            if j == length(pattern) - 1:
+                print("Pattern found at", i - j)
+                j = pi[j]
+            else:
+                j += 1
+```
+
+### Complexity
+- 시간 복잡도: O(n + m) (n: 텍스트 길이, m: 패턴 길이)
+- 공간 복잡도: O(m) (패턴 길이를 저장하는 PI 배열의 크기)
+
+### Implementation
++ C++
+    ```c++
+    #include <iostream>
+    #include <vector>
+    #include <string>
+
+    using namespace std;
+
+    vector<int> computePI(const string& pattern) {
+        vector<int> pi(pattern.size(), 0);
+        int j = 0;
+        for (int i = 1; i < pattern.size(); ++i) {
+            while (j > 0 && pattern[i] != pattern[j]) {
+                j = pi[j - 1];
+            }
+            if (pattern[i] == pattern[j]) {
+                pi[i] = ++j;
+            }
+        }
+        return pi;
+    }
+
+    void KMP(const string& text, const string& pattern) {
+        vector<int> pi = computePI(pattern);
+        int j = 0;
+        for (int i = 0; i < text.size(); ++i) {
+            while (j > 0 && text[i] != pattern[j]) {
+                j = pi[j - 1];
+            }
+            if (text[i] == pattern[j]) {
+                if (j == pattern.size() - 1) {
+                    cout << "Pattern found at index " << i - j << endl;
+                    j = pi[j];
+                } else {
+                    ++j;
+                }
+            }
+        }
+    }
+    ```
+
+---
+
+## LCP 알고리즘
+
+LCP 배열은 서픽스 배열(Suffix Array)과 함께 사용되며, 문자열에서 인접한 서픽스 간의 공통 접두사의 최대 길이를 나타낸다. LCP 배열은 문자열 내 중복된 부분 문자열이나 문자열 비교와 같은 문제를 해결하는 데 사용된다.
+
+### Algorithm
+1. **서픽스 배열 생성**  
+   문자열의 모든 접미사를 사전순으로 정렬한다.
+2. **LCP 배열 계산**  
+   서픽스 배열의 인접한 항목 간의 공통 접두사 길이를 계산하여 LCP 배열을 생성한다.
+
+- **동작 과정**
+  1. 주어진 문자열의 서픽스 배열을 구한다.
+  2. 서픽스 배열의 순서를 기준으로 인접한 두 서픽스 간의 공통 접두사 길이를 계산한다.
+  3. 계산된 값을 LCP 배열에 저장한다.
+
+### Pseudocode
+```
+function computeLCP(suffixArray, text):
+    n = length(text)
+    lcp = [0] * n
+    rank = [0] * n
+
+    for i from 0 to n - 1:
+        rank[suffixArray[i]] = i
+
+    k = 0
+    for i from 0 to n - 1:
+        if rank[i] == n - 1:
+            k = 0
+            continue
+        j = suffixArray[rank[i] + 1]
+        while (i + k < n and j + k < n and text[i + k] == text[j + k]):
+            k += 1
+        lcp[rank[i]] = k
+        if k > 0:
+            k -= 1
+    return lcp
+```
+
+### Complexity
+- 시간 복잡도: O(n) (n: 문자열 길이)
+- 공간 복잡도: O(n) (서픽스 배열과 LCP 배열의 크기)
+
+### Implementation
++ C++
+    ```c++
+    #include <iostream>
+    #include <vector>
+    #include <string>
+    #include <algorithm>
+
+    using namespace std;
+
+    vector<int> buildSuffixArray(const string& s) {
+        int n = s.size();
+        vector<int> suffixArray(n), rank(n), temp(n);
+        for (int i = 0; i < n; ++i) {
+            suffixArray[i] = i;
+            rank[i] = s[i];
+        }
+        for (int k = 1; k < n; k *= 2) {
+            auto cmp = [&](int a, int b) {
+                if (rank[a] != rank[b]) return rank[a] < rank[b];
+                int ra = (a + k < n) ? rank[a + k] : -1;
+                int rb = (b + k < n) ? rank[b + k] : -1;
+                return ra < rb;
+            };
+            sort(suffixArray.begin(), suffixArray.end(), cmp);
+            temp[suffixArray[0]] = 0;
+            for (int i = 1; i < n; ++i) {
+                temp[suffixArray[i]] = temp[suffixArray[i - 1]] + (cmp(suffixArray[i - 1], suffixArray[i]) ? 1 : 0);
+            }
+            rank = temp;
+        }
+        return suffixArray;
+    }
+
+    vector<int> computeLCP(const string& s, const vector<int>& suffixArray) {
+        int n = s.size();
+        vector<int> lcp(n), rank(n);
+        for (int i = 0; i < n; ++i) rank[suffixArray[i]] = i;
+        int k = 0;
+        for (int i = 0; i < n; ++i) {
+            if (rank[i] == n - 1) {
+                k = 0;
+                continue;
+            }
+            int j = suffixArray[rank[i] + 1];
+            while (i + k < n && j + k < n && s[i + k] == s[j + k]) ++k;
+            lcp[rank[i]] = k;
+            if (k > 0) --k;
+        }
+        return lcp;
+    }
+    ```

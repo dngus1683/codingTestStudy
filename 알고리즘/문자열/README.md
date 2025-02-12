@@ -103,7 +103,75 @@ C++에서 문자열을 공백을 기준으로 분리하는 방법에는 여러 �
         return 0;
     }
     ```
+  + **한 문자씩 합치기**
 
+      std::string::substr()의 시간 복잡도는 O(N)이며 반복문의 깊이가 깊다면 시간이 오래걸릴 수 있다. 때문에 반복문을 통해 문자 단위로 문자열을 순회하면서 ' '가 나올 때까지 앞 전의 문자들을 더해간다.
+      이 후, ' '이 나타난다면 그때까지 합했던 단어를 처리한 후 다시 새로 문자를 더해간다.
+      
+      ```c++
+      #include <iostream>
+      #include <string>
+      #include <vector>
+    
+      usine namespace std;
+      
+      int main() {
+          string line = "Hello world, how are you?";
+          vector<std::string> words;
+
+          string word;
+          for(char ch : line)
+          {
+              if(ch != ' ')
+              {
+                  word += ch;
+              }
+              else
+              {
+                  words.push_back(word);
+                  word.clear();
+              }
+          }
+          if(!word.empty())
+          {
+              words.push_back(word);
+          }
+      
+          return 0;
+      }
+      ```
+ + **cin.peek() 활용**
+
+      std::cin.peek() 함수는 스트림에 존재하는 문자를 반환하는 함수다. 이를 활용하여, 일반적인 cin >> 을 통해 문자 단위로 입력받다가 cin.peek()를 통해 '\n'이 스트림에 남아있다면 입력 받기를 종료하는 방식이다.
+      이때, std::cin.peek()는 스트림에서 문자를 제거하지는 않기 때문에 std::cin.ignore()로 추가적으로 제거해줘야 한다.
+
+      하지만 이 방식은 다른 방식들보다 입력을 많이 받기 때문에, 입력받을 단어가 많을 경우 시간이 가장 오래걸릴 수 있다.
+      
+      ```c++
+      #include <iostream>
+      #include <string>
+      #include <vector>
+    
+      usine namespace std;
+      
+      int main() {
+          vector<std::string> words;
+      
+          string word;
+          while(true)
+          {
+              cin >> word;
+              words.push_back(word);
+              if(cin.peek() == '\n')
+              {
+                  cin.ignore();
+                  break;
+              }
+          }
+      
+          return 0;
+      }
+      ```
 
 ## 문자열 자료형 변환
 

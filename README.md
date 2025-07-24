@@ -8,7 +8,6 @@
   + [DFS & BFS](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EA%B7%B8%EB%9E%98%ED%94%84/DFS%20%26%20BFS)
   + [Disjointset](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EA%B7%B8%EB%9E%98%ED%94%84/Disjointset)
   + [최단 거리](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EA%B7%B8%EB%9E%98%ED%94%84/%EC%B5%9C%EB%8B%A8%20%EA%B1%B0%EB%A6%AC)
-  + [세그먼트 트리](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EA%B7%B8%EB%9E%98%ED%94%84/%EC%84%B8%EA%B7%B8%EB%A8%BC%ED%8A%B8%20%ED%8A%B8%EB%A6%AC)
 + [Dynamic Programming](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/DP)
 + [구현](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EA%B5%AC%ED%98%84)
 + [그리디 알고리즘](https://github.com/dngus1683/codingTestStudy/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EA%B7%B8%EB%A6%AC%EB%94%94%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
